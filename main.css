@@ -1,0 +1,244 @@
+/* Globales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200; 1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+font-family: 'Poppins', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+outline: none;
+border: none;
+}
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    max-width: 1800px;
+    width: 100%;
+    font-family: 'Lato';
+    color: #333;
+    display: flex;
+}
+
+
+.heading{
+    text-align: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem;
+
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+   
+    width: 100%;
+    height: 25%;
+    background-color: rgb(255, 0, 212);
+    box-shadow: 0 .5rem 0.2rem rgb(255, 0, 212);
+    padding: 2rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+
+}
+header img{
+width: 150px;
+height: 150px;
+
+}
+header .navbar a{
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    padding: 0px ;
+    color: #ffffff;
+    text-align: center;
+  
+}
+header h2{
+    margin-bottom: 5%;
+    margin-right: 0%;
+    color: #000000;
+}
+header h2 span{
+    color: white;
+}
+header .navbar a:hover{
+    color: #000000;
+}
+header input{
+    display: none;
+}
+header label{
+    font-size: 3rem;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+
+}
+header input:checked ~ .navbar{
+    transform: scaleX(0);
+    opacity: 1;
+
+}
+
+header input:checked ~ label::before{
+    content: '\f00d';
+}
+/* Header */
+
+.container-items{
+    margin-top: 20%;
+}
+iframe{
+   margin-top: 13%;
+}
+
+/* Main */
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item{
+    border-radius: 10px;
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.item figure{
+    overflow: hidden;
+}
+
+.item:hover img{
+    transform: scale(1.2);
+}
+
+.info-product{
+    padding: 15px 30px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.info-product h2{
+    color: black;
+    
+}
+
+.price{
+    font-size: 13px;
+    font-weight: 900;
+    color: #000;
+}
+
+.info-product button{
+    border: none;
+    background: none;
+    background-color: #ff0cae;
+    color: #fff;
+    margin: 50px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.info-product button a{
+    text-decoration: none;
+    color: white;
+}
+
+/* LARGE SIZE */
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 50px;
+}
+@media (max-width: 1200px){
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgb(230, 35, 181);
+        padding: 1rem 2rem;
+        border-top: 1rem solid #d90ee0;
+        box-shadow: 0 .5rem 1rem #e006e7;
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+
+
+    }
+    header .navbar a{
+        display: block;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+    }
+    }
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+
+    }
+
+    header input:checked~label::before{
+        content: '\f00d';
+    }
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 50px;
+}
+@media (max-width: 768px) and (min-width:401px){
+    .container-items{
+        margin-top: 35%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+@media (max-width: 400px){
+    header img{
+        width: 100px;
+        height: 100px;
+    }
+    header h2{
+        font-size: 30px;
+    }
+    .container-items{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 70%;
+        padding: 15px;
+    }
+    .pedir button{
+        margin-left: 7%;
+    }
+}    
